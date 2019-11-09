@@ -1,0 +1,14 @@
+[{
+  "modid": "$mod_id",
+  "name": "CraftLogic Bees",
+  "description": "Bees for CraftLogic Core",
+  "version": "$mod_version",
+  "mcversion": "$mc_version",
+  "url": "https://minecraft.curseforge.com/projects/craftlogic-bees",
+  "updateUrl": "",
+  "authorList": ["Radviger"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}]
