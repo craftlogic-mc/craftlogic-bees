@@ -1,0 +1,9 @@
+{
+    "parent": "craftlogic-bees:block/apiary/_covered_opened",
+    "textures": {
+        "planks": "blocks/planks_oak",
+        "log": "blocks/log_oak",
+        "log_top": "blocks/log_oak_top",
+        "particle": "blocks/planks_oak"
+    }
+}

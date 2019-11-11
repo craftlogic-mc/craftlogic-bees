@@ -1,2 +1,4 @@
+itemGroup.craftlogic-bees=Craftlogic: Beekeeping
+
 tile.bee_hive.name=Bee Hive
-tile.bee_house.name=Apiary
+tile.apiary.name=Apiary

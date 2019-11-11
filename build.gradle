@@ -6,6 +6,10 @@ buildscript {
             name = 'forge'
             url = "http://files.minecraftforge.net/maven" 
         }
+        maven {
+            name = 'sponge'
+            url = 'http://repo.spongepowered.org/maven'
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -41,14 +45,25 @@ minecraft {
 }
 
 runClient {
+    jvmArgs '-Dfml.coreMods.load=ru.craftlogic.coremod.CraftLogicCoremod'
     args '--username', project.username
 }
 
 repositories {
     mavenCentral()
+    maven {
+        name 'spongepowered'
+        url 'https://repo.spongepowered.org/maven/'
+    }
 }
 
 dependencies {
+    compile(group: 'org.spongepowered', name: 'mixin', version: '0.7.7-SNAPSHOT') {
+        exclude module: 'launchwrapper'
+        exclude module: 'guava'
+        exclude module: 'gson'
+        exclude module: 'commons-io'
+    }
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"

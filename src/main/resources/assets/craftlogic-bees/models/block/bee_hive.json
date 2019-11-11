@@ -2,8 +2,8 @@
 	"ambientocclusion": false,
 	"parent": "block/thin_block",
 	"textures": {
-		"hive": "craftlogic:blocks/bee_hive",
-		"particle": "craftlogic:blocks/bee_hive"
+		"hive": "craftlogic-bees:blocks/bee_hive",
+		"particle": "craftlogic-bees:blocks/bee_hive"
 	},
 	"elements": [
 		{

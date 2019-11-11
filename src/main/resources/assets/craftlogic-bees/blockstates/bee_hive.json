@@ -1,5 +1,5 @@
 {
   "variants": {
-    "normal": {"model": "craftlogic:bee_hive"}
+    "normal": {"model": "craftlogic-bees:bee_hive"}
   }
 }

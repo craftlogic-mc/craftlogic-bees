@@ -1,2 +1,4 @@
+itemGroup.craftlogic-bees=Craftlogic: Пчеловодство
+
 tile.bee_hive.name=Пчелиный улей
-tile.bee_house.name=Пасека
+tile.apiary.name=Пасека
