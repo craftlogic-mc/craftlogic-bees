@@ -102,7 +102,7 @@ public class TileEntityApiary extends TileEntityBase implements Updatable, Inven
         BlockPos end = pos.add(range, range, range);
 
         for (BlockPos.MutableBlockPos p : BlockPos.getAllInBoxMutable(start, end)) {
-            if (isFlower(world.getBlockState(p))) {
+            if (isFlower(world.getBlockState(p).getActualState(world, p))) {
                 flowers.add(p.toImmutable());
             }
         }
@@ -158,7 +158,7 @@ public class TileEntityApiary extends TileEntityBase implements Updatable, Inven
             }
 
             for (BlockPos.MutableBlockPos p : BlockPos.getAllInBoxMutable(start, end)) {
-                if (random.nextFloat() <= ((float) bees / 25) && isFlower(world.getBlockState(p))) {
+                if (random.nextFloat() <= ((float) bees / 25) && isFlower(world.getBlockState(p).getActualState(world, p))) {
                     particleManager.addEffect(new ParticleBeeRoundTrip(world, entrance, p.toImmutable(), 0xFFFFFF));
                 }
             }
