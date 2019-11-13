@@ -6,7 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import ru.craftlogic.bees.common.ProxyCommon;
+import ru.craftlogic.api.BeesBlocks;
 
 import java.util.Random;
 
@@ -32,7 +32,7 @@ public class WorldGenBeeHive extends WorldGenerator {
 
                 if (isReplaceable(state, world, p)) {
                     System.out.println("Generated bee hive at " + p);
-                    world.setBlockState(p.toImmutable(), ProxyCommon.BEE_HIVE.getDefaultState(), 2);
+                    world.setBlockState(p.toImmutable(), BeesBlocks.BEE_HIVE.getDefaultState(), 2);
                 }
             }
         }

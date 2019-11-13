@@ -2,3 +2,6 @@ itemGroup.craftlogic-bees=Craftlogic: Beekeeping
 
 tile.bee_hive.name=Bee Hive
 tile.apiary.name=Apiary
+
+item.honeycomb.name=Honeycomb
+item.scoop.name=Scoop

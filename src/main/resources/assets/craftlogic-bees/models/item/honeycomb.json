@@ -1,0 +1,13 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "wax": "craftlogic-bees:items/honeycomb_empty",
+    "slot1": "craftlogic-bees:items/honeycomb_overlay_0",
+    "slot2": "craftlogic-bees:items/honeycomb_overlay_1",
+    "slot3": "craftlogic-bees:items/honeycomb_overlay_2",
+    "slot4": "craftlogic-bees:items/honeycomb_overlay_3",
+    "slot5": "craftlogic-bees:items/honeycomb_overlay_4",
+    "slot6": "craftlogic-bees:items/honeycomb_overlay_5",
+    "slot7": "craftlogic-bees:items/honeycomb_overlay_6"
+  }
+}
