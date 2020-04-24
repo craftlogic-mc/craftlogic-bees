@@ -3,6 +3,7 @@ package ru.craftlogic.bees.common.inventory;
 import net.minecraft.entity.player.InventoryPlayer;
 import ru.craftlogic.api.inventory.ContainerBase;
 import ru.craftlogic.bees.common.tileentity.TileEntityApiary;
+import ru.craftlogic.bees.common.tileentity.TileEntityApiary.ApiaryField;
 
 public class ContainerApiary extends ContainerBase<TileEntityApiary> {
     public ContainerApiary(InventoryPlayer playerInv, TileEntityApiary apiary) {
@@ -19,5 +20,21 @@ public class ContainerApiary extends ContainerBase<TileEntityApiary> {
         this.addSlotToContainer(new SlotBeeQueen(apiary, 9, 134, 34));
         this.addSlotToContainer(new SlotBeeQueen(apiary, 10, 134, 54));
         this.addPlayerSlots(playerInv, 8, 84);
+    }
+
+    public int getBees() {
+        return this.inventory.getField(ApiaryField.BEES);
+    }
+
+    public int getMaxBees() {
+        return this.inventory.getField(ApiaryField.MAX_BEES);
+    }
+
+    public int getWork() {
+        return this.inventory.getField(ApiaryField.WORK);
+    }
+
+    public int getRange() {
+        return this.inventory.getField(ApiaryField.RANGE);
     }
 }

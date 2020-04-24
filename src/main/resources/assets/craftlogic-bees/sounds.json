@@ -1,0 +1,11 @@
+{
+  "buzz": {
+    "category": "ambient",
+    "subtitle": "craftlogic-bees.subtitle.buzz",
+    "sounds": [
+      "craftlogic-bees:buzz" ,
+      "craftlogic-bees:buzz1",
+      "craftlogic-bees:buzz2"
+    ]
+  }
+}

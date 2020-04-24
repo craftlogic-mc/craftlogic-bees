@@ -23,6 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.craftlogic.api.CraftAPI;
 import ru.craftlogic.api.block.Updatable;
 import ru.craftlogic.api.block.holders.ScreenHolder;
+import ru.craftlogic.api.inventory.InventoryFieldHolder;
 import ru.craftlogic.api.inventory.InventoryHolder;
 import ru.craftlogic.api.inventory.manager.InventoryManager;
 import ru.craftlogic.api.inventory.manager.ListInventoryManager;
@@ -43,6 +44,7 @@ public class TileEntityApiary extends TileEntityBase implements Updatable, Inven
     private int bees = 0;
     private int work = 0;
     private int range = 5;
+    private final int maxBees = 20;
     private Vector<BlockPos> flowers = new Vector<>();
 
     public TileEntityApiary(World world, IBlockState state) {
@@ -311,5 +313,17 @@ public class TileEntityApiary extends TileEntityBase implements Updatable, Inven
     @SideOnly(Side.CLIENT)
     public GuiContainer createScreen(EntityPlayer player, int subId) {
         return new ScreenApiary(player.inventory, this, createContainer(player, subId));
+    }
+
+    @Override
+    public void addSyncFields(InventoryFieldHolder fieldHolder) {
+        fieldHolder.addReadOnlyField(ApiaryField.BEES, () -> bees);
+        fieldHolder.addReadOnlyField(ApiaryField.MAX_BEES, () -> maxBees);
+        fieldHolder.addReadOnlyField(ApiaryField.WORK, () -> work);
+        fieldHolder.addReadOnlyField(ApiaryField.RANGE, () -> range);
+    }
+
+    public enum ApiaryField implements FieldIdentifier {
+        BEES, MAX_BEES, WORK, RANGE
     }
 }

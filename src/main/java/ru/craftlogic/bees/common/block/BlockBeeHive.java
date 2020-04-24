@@ -14,6 +14,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.craftlogic.api.BeesAPI;
 import ru.craftlogic.api.BeesItems;
 import ru.craftlogic.api.BeesMaterials;
 import ru.craftlogic.api.block.BlockNarrow;
@@ -56,7 +57,7 @@ public class BlockBeeHive extends BlockNarrow implements ModelRegistrar {
     public void registerModel(ModelManager modelManager) {
         super.registerModel(modelManager);
         modelManager.registerStateMapper(this, (state, mapper) ->
-            new ModelResourceLocation("craftlogic-bees:bee_hive", "normal")
+            new ModelResourceLocation(BeesAPI.MOD_ID + ":bee_hive", "normal")
         );
     }
 

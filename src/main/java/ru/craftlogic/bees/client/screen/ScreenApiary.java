@@ -33,5 +33,6 @@ public class ScreenApiary extends ScreenWithInventory<ContainerApiary> {
     public void drawForeground(int mouseX, int mouseY, float deltaTime) {
         this.drawCenteredText(this.apiary.getDisplayName(), getWidth() / 2, 9, 0x404040);
         this.drawText(this.playerInv.getDisplayName(), 8, getHeight() - 94, 0x404040);
+        this.drawText(String.format("Bees: %d/%d", this.container.getBees() * 100, this.container.getMaxBees() * 100), 9, 9, 0x404040);
     }
 }
