@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:planks",
+      "data": 0
+    },
+    "T": {
+      "item": "minecraft:wooden_pressure_plate"
+    },
+    "S": {
+      "item": "minecraft:wooden_slab",
+      "data": 0
+    },
+    "L": {
+      "item": "minecraft:log",
+      "data": 0
+    },
+    "C": {
+      "item": "craftlogic-bees:honeycomb",
+      "data": 32767
+    }
+  },
+  "pattern": [
+    "STS",
+    "PCP",
+    "LSL"
+  ],
+  "result": {
+    "count": 1,
+    "item": "craftlogic-bees:apiary_oak"
+  }
+}

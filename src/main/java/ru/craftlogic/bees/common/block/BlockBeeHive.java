@@ -84,7 +84,7 @@ public class BlockBeeHive extends BlockNarrow implements ModelRegistrar {
     @Override
     public void addDrops(Location location, NonNullList<ItemStack> items, int fortune) {
         World world = location.getWorld();
-        for (int i = 0; i < 1 + world.rand.nextInt(2); i++) {
+        for (int i = 0; i < 1/* + world.rand.nextInt(2)*/; i++) {
             ItemStack comb = new ItemStack(BeesItems.HONEYCOMB);
             comb.setTagCompound(ItemHoneycomb.setSlots(new NBTTagCompound(), slot -> world.rand.nextInt(2)));
             items.add(comb);

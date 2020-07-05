@@ -1,13 +1,16 @@
 package ru.craftlogic.bees.client.particle;
 
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import ru.craftlogic.api.BeesSounds;
 import ru.craftlogic.bees.client.ProxyClient;
 
 public class ParticleBeeRoundTrip extends ParticleBee {
 	private final Vec3d origin;
 	private final BlockPos destination;
+	private boolean buzzed;
 
 	public ParticleBeeRoundTrip(World world, Vec3d origin, BlockPos destination, int color) {
 		super(world, origin.x, origin.y, origin.z, 0.0, 0.0, 0.0);
@@ -57,6 +60,7 @@ public class ParticleBeeRoundTrip extends ParticleBee {
 			motionY = (motionY + 0.2 * (-0.5 + rand.nextFloat())) / 2;
 			motionZ = (destination.getZ() + 0.5 - posZ) * 0.03;
 		} else if (particleAge < particleMaxAge * 0.75) {
+			buzz();
 			// venture back
 			motionX *= 0.95;
 			motionY = (origin.y - posY) * 0.03;
@@ -72,6 +76,13 @@ public class ParticleBeeRoundTrip extends ParticleBee {
 
 		if (particleAge++ >= particleMaxAge) {
 			setExpired();
+		}
+	}
+
+	private void buzz() {
+		if (!buzzed) {
+			buzzed = true;
+			world.playSound(posX, posY, posZ, BeesSounds.BUZZ, SoundCategory.AMBIENT, 1F, 0.7F + rand.nextFloat() * 0.3F, false);
 		}
 	}
 }

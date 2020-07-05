@@ -111,12 +111,13 @@ public class TileEntityApiary extends TileEntityBase implements Updatable, Inven
     }
 
     private boolean shouldRenderParticle(int particleSetting, Random random) {
-        if (particleSetting == 2) { // minimal
-            return random.nextInt(10) == 0;
-        } else if (particleSetting == 1) { // decreased
-            return random.nextInt(3) != 0;
-        } else { // all
-            return true;
+        switch (particleSetting) {
+            case 2:  // minimal
+                return random.nextInt(10) == 0;
+            case 1:  // decreased
+                return random.nextInt(3) != 0;
+            default:  // all
+                return true;
         }
     }
 
